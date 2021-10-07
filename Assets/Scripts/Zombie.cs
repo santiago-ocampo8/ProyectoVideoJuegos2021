@@ -16,7 +16,7 @@ public class Zombie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        seguir(GameObject.Find("FPSController").transform.position);
+        seguir(GameObject.Find("Player").transform.position);
     }
 
     void seguir(Vector3 objetivo){
