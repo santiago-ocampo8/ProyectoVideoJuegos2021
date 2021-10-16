@@ -19,7 +19,7 @@ public class LogicaArma : MonoBehaviour
     [Header("Referencia de Objetos")]
     public ParticleSystem fuegoDeArma;
 
-    [Header("eferencia de Sonidos")]
+    [Header("Referencia de Sonidos")]
     public AudioClip sonDisparo;
     public AudioClip sonSinBalas;
     public AudioClip sonCartuchoEntra;
