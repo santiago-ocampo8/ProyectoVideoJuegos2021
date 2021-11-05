@@ -37,13 +37,21 @@ public class ControladorArmas : MonoBehaviour
             SeleccionarArmaAnterior();
             armas[indiceArmaActual].recargando = false;
             armas[indiceArmaActual].tiempoNoDisparo = false;
+            armas[indiceArmaActual].estadoADS = false;
         }
         else if (ruedaMouse < 0f)
         {
             SeleccionarArmaSiguiente();
             armas[indiceArmaActual].recargando = false;
             armas[indiceArmaActual].tiempoNoDisparo = false;
+            armas[indiceArmaActual].estadoADS = false;
         }
+        //-0.002 -0.794 -0.123
+
+        //0.29 -0.93 0.19
+
+        //0 -0.8 -0.05   0.189
+        //0 -0.75 -0.05
     }
 
     void SeleccionarArmaAnterior()
