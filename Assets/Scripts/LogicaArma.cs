@@ -19,6 +19,7 @@ public class LogicaArma : MonoBehaviour
     [Header("Referencia de Objetos")]
     public ParticleSystem fuegoDeArma;
     public Camera camaraPrincipal;
+    public Transform puntoDisparo;
 
     [Header("Referencia de Sonidos")]
     public AudioClip sonDisparo;
@@ -122,6 +123,27 @@ public class LogicaArma : MonoBehaviour
         ReproducirAnimacionDisparo();
         balasEnCartucho--;
         StartCoroutine(ReiniciarTiempoNoDisparo());
+        DisparoDirecto();
+    }
+
+    void DisparoDirecto()
+    {
+        RaycastHit hit;
+        if(Physics.Raycast(puntoDisparo.position, puntoDisparo.forward, out hit))
+        {
+            if(hit.transform.CompareTag("Enemigo"))
+            {
+                Vida vida = hit.transform.GetComponent<Vida>();
+                if(vida == null)
+                {
+                    throw new System.Exception("No se encontro el componente Vida del Enemigo");
+                }
+                else
+                {
+                    vida.RecibirDaño(daño);
+                }
+            }
+        }
     }
 
     public virtual void ReproducirAnimacionDisparo()
