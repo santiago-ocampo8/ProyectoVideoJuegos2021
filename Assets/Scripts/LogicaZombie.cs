@@ -20,6 +20,9 @@ public class LogicaZombie : MonoBehaviour
     public float daño = 25;
     public bool mirando;
 
+    public bool sumarPuntos;
+    public GameObject puntajePantalla;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -73,6 +76,12 @@ public class LogicaZombie : MonoBehaviour
         if(Vida0) return;
         if(vida.valor <= 0)
         {
+            sumarPuntos = true;
+            if(sumarPuntos)
+            {
+                puntajePantalla.GetComponent<Puntaje>().valor += 20;
+                sumarPuntos = false;
+            }
             Vida0 = true;
             Agente.isStopped = true;
             GetComponent<Collider>().enabled = false;

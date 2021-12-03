@@ -20,6 +20,8 @@ public class LogicaArma : MonoBehaviour
     public ParticleSystem fuegoDeArma;
     public Camera camaraPrincipal;
     public Transform puntoDisparo;
+    public GameObject efectoDañoPrefab;
+    public GameObject Coordenadas;
 
     [Header("Referencia de Sonidos")]
     public AudioClip sonDisparo;
@@ -126,6 +128,13 @@ public class LogicaArma : MonoBehaviour
         DisparoDirecto();
     }
 
+    public void CrearEfectoDaño(Vector3 pos, Quaternion rot)
+    {
+        GameObject efectoDaño = Instantiate(efectoDañoPrefab, pos, rot);
+        efectoDaño.transform.SetParent(Coordenadas.transform);
+        Destroy(efectoDaño, 1f);
+    }
+
     void DisparoDirecto()
     {
         RaycastHit hit;
@@ -141,6 +150,7 @@ public class LogicaArma : MonoBehaviour
                 else
                 {
                     vida.RecibirDaño(daño);
+                    CrearEfectoDaño(hit.point, hit.transform.rotation);
                 }
             }
         }
@@ -179,7 +189,7 @@ public class LogicaArma : MonoBehaviour
 
     }
 
-    void RevisarRecargar() 
+    public void RevisarRecargar() 
     {
         if (balasRestantes > 0 && balasEnCartucho < tamañoDeCartucho)
         {
@@ -229,5 +239,18 @@ public class LogicaArma : MonoBehaviour
     void ReiniciarRecargar()
     {
         recargando = false;
+    }
+
+    public void Municion()//int municion
+    {
+        balasRestantes = maximoDeBalas;
+        // if((balasRestantes + municion) > maximoDeBalas)
+        // {
+        //     balasRestantes = maximoDeBalas;
+        // }
+        // else
+        // {
+        //     balasRestantes += municion;
+        // }
     }
 }

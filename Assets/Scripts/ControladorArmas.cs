@@ -38,6 +38,7 @@ public class ControladorArmas : MonoBehaviour
             armas[indiceArmaActual].recargando = false;
             armas[indiceArmaActual].tiempoNoDisparo = false;
             armas[indiceArmaActual].estadoADS = false;
+            armas[indiceArmaActual].RevisarRecargar();
         }
         else if (ruedaMouse < 0f)
         {
@@ -45,13 +46,8 @@ public class ControladorArmas : MonoBehaviour
             armas[indiceArmaActual].recargando = false;
             armas[indiceArmaActual].tiempoNoDisparo = false;
             armas[indiceArmaActual].estadoADS = false;
+            armas[indiceArmaActual].RevisarRecargar();
         }
-        //-0.002 -0.794 -0.123
-
-        //0.29 -0.93 0.19
-
-        //0 -0.8 -0.05   0.189
-        //0 -0.75 -0.05
     }
 
     void SeleccionarArmaAnterior()
@@ -78,5 +74,13 @@ public class ControladorArmas : MonoBehaviour
             indiceArmaActual++;
         }
         CambiarArmaActual();
+    }
+
+    public void RecargarMunicion()
+    {
+        for (int i = 0; i < armas.Length; i++)
+        {
+            armas[i].GetComponent<LogicaArma>().Municion();
+        }
     }
 }

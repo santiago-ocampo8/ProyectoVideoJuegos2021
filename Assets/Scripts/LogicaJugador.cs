@@ -9,11 +9,13 @@ public class LogicaJugador : MonoBehaviour
     public bool Vida0 = false;
     [SerializeField]
     private Animator animatorPerder;
+    public Puntaje puntaje;
 
     // Start is called before the first frame update
     void Start()
     {
         vida = GetComponent<Vida>();
+        puntaje.valor = 0;
     }
 
     // Update is called once per frame
@@ -27,6 +29,7 @@ public class LogicaJugador : MonoBehaviour
         if (Vida0) return;
         if(vida.valor <= 0)
         {
+            //AudioListener.volume = 0f;
             Vida0 = true;
             //Invoke("reiniciarJuego", 2f);
         }
@@ -35,5 +38,7 @@ public class LogicaJugador : MonoBehaviour
     void reiniciarJuego()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        puntaje.valor = 0;
+        AudioListener.volume = 1f;
     }
 }

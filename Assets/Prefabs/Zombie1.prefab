@@ -1316,9 +1316,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1109447009581298372}
   - component: {fileID: 6157893464162009328}
+  - component: {fileID: 215779336713241101}
+  - component: {fileID: 6589616670084748723}
   m_Layer: 0
   m_Name: Z_Head
-  m_TagString: Untagged
+  m_TagString: Enemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1399,6 +1401,36 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.13655424, y: 0.08126316, z: 0.000000037252903}
     m_Extent: {x: 0.15378535, y: 0.12076975, z: 0.08768331}
   m_DirtyAABB: 0
+--- !u!65 &215779336713241101
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3621500352810150899}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.17536674, y: 0.24153967, z: 0.30757082}
+  m_Center: {x: -0.000000044305356, y: -0.01740133, z: 1.6408842}
+--- !u!114 &6589616670084748723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3621500352810150899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2e2d89429b66a149a37da737c80292f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valor: 100
+  padreRef: {fileID: 109688540817226653}
+  "multiplicadorDa\xF1o": 2
+  textFlotantePrefab: {fileID: 5303933561112046534, guid: 53a3a1dcd7537c34da09c51ebbbcd1d4, type: 3}
+  "da\xF1oTotal": 0
 --- !u!1 &3760540064072966281
 GameObject:
   m_ObjectHideFlags: 0
@@ -1779,7 +1811,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4600469547342072719}
-  m_LocalRotation: {x: -0, y: -0.7550874, z: -0, w: -0.6556242}
+  m_LocalRotation: {x: -0, y: -0.75508744, z: 0, w: -0.6556241}
   m_LocalPosition: {x: 43.85, y: -0.09, z: 87.09}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children:
@@ -1832,9 +1864,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.3055441
-  m_Height: 1.8864135
+  m_Height: 1.6290839
   m_Direction: 1
-  m_Center: {x: 0.0033600626, y: 0.88383496, z: -0.04120558}
+  m_Center: {x: 0.0033600626, y: 0.75517005, z: -0.04120558}
 --- !u!114 &109688540817226643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1853,6 +1885,8 @@ MonoBehaviour:
   angularSpeed: 120
   "da\xF1o": 25
   mirando: 0
+  sumarPuntos: 0
+  puntajePantalla: {fileID: 3474810982102512030, guid: 67135a427df7c6f4193ab29f10e5a30d, type: 3}
 --- !u!195 &109688540817226642
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1863,7 +1897,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1888,6 +1922,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valor: 100
+  padreRef: {fileID: 0}
+  "multiplicadorDa\xF1o": 1
+  textFlotantePrefab: {fileID: 5303933561112046534, guid: 53a3a1dcd7537c34da09c51ebbbcd1d4, type: 3}
+  "da\xF1oTotal": 0
 --- !u!1 &4627802378709333828
 GameObject:
   m_ObjectHideFlags: 0
