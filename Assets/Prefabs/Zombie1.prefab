@@ -1883,7 +1883,7 @@ MonoBehaviour:
   estaAtacando: 0
   speed: 1
   angularSpeed: 120
-  "da\xF1o": 25
+  "da\xF1o": 10
   mirando: 0
   sumarPuntos: 0
   puntajePantalla: {fileID: 3474810982102512030, guid: 67135a427df7c6f4193ab29f10e5a30d, type: 3}
@@ -1901,7 +1901,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
