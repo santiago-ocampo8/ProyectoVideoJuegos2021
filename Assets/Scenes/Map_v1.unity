@@ -4222,7 +4222,6 @@ GameObject:
   - component: {fileID: 319957449}
   - component: {fileID: 319957448}
   - component: {fileID: 319957447}
-  - component: {fileID: 319957452}
   - component: {fileID: 319957451}
   m_Layer: 5
   m_Name: Canvas
@@ -4331,18 +4330,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuPausa: {fileID: 1851568334}
---- !u!114 &319957452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 319957446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 261e02685717a2b43bcccdd7bc145fb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &320344003
 GameObject:
   m_ObjectHideFlags: 0
@@ -28017,6 +28004,31 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100002, guid: e731a1ac8914e2548ae80adaba4759b1, type: 3}
   m_PrefabInstance: {fileID: 1881613426}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1742701703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742701702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d2b0f0e93dc9044b9050814f8779ee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1742701704
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742701702}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 652.2083, y: 319.81134, z: 1299.1981}
+  m_Center: {x: 182.1581, y: 160.84352, z: -260.594}
 --- !u!82 &1742701707
 AudioSource:
   m_ObjectHideFlags: 0

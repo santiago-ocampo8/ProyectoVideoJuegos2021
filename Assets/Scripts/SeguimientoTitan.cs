@@ -8,7 +8,7 @@ public class SeguimientoTitan : MonoBehaviour
     public GameObject Enemigo;
 
 
-    private AudioSource audio;
+    private AudioSource audioTitan;
     bool vision;
     NavMeshAgent Agente;
     Vector3 posIni;
@@ -26,7 +26,7 @@ public class SeguimientoTitan : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audio= gameObject.GetComponent<AudioSource>();
+        audioTitan= gameObject.GetComponent<AudioSource>();
         this.posIni = this.transform.position;
         this.Agente = this.GetComponent<NavMeshAgent>();
         vidaJugador = Enemigo.GetComponent<Vida>();
@@ -144,7 +144,7 @@ public class SeguimientoTitan : MonoBehaviour
 
     void atacar()
     {
-        audio.Play();
+        audioTitan.Play();
         vidaJugador.RecibirDaño(daño);
         estaAtacando = true;
         animator.SetTrigger("DebeAtacar");
