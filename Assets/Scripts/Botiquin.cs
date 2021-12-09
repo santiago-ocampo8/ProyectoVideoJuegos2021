@@ -6,15 +6,24 @@ public class Botiquin : MonoBehaviour
 {
     private Animator animator;
 
-    private void Start() {
+    private void Start()
+    {
         animator = GetComponent<Animator>();
     }
-    private void OnTriggerEnter(Collider other) {
-        if(other.CompareTag("Player"))
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.CompareTag("Player"))
         {
-            animator.SetTrigger("Entrada");
-            other.GetComponent<Vida>().Curar(25);
-            Destroy(gameObject,2.2f);
+            if (other.GetComponent<Vida>().valor < 100)
+            {
+                animator.SetTrigger("Entrada");
+                other.GetComponent<Vida>().Curar(25);
+                Destroy(gameObject, 2.2f);
+
+            }
+
+
         }
     }
 

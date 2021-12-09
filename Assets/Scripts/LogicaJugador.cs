@@ -29,15 +29,14 @@ public class LogicaJugador : MonoBehaviour
         if (Vida0) return;
         if(vida.valor <= 0)
         {
-            //AudioListener.volume = 0f;
             Vida0 = true;
-            //Invoke("reiniciarJuego", 2f);
+            Invoke("reiniciarJuego", 4f);
         }
     }
 
     void reiniciarJuego()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(0);
         puntaje.valor = 0;
         AudioListener.volume = 1f;
     }
