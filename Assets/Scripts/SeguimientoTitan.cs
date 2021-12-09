@@ -6,6 +6,9 @@ using UnityEngine.AI;
 public class SeguimientoTitan : MonoBehaviour
 {
     public GameObject Enemigo;
+
+
+    private AudioSource audio;
     bool vision;
     NavMeshAgent Agente;
     Vector3 posIni;
@@ -23,6 +26,7 @@ public class SeguimientoTitan : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audio= gameObject.GetComponent<AudioSource>();
         this.posIni = this.transform.position;
         this.Agente = this.GetComponent<NavMeshAgent>();
         vidaJugador = Enemigo.GetComponent<Vida>();
@@ -140,6 +144,7 @@ public class SeguimientoTitan : MonoBehaviour
 
     void atacar()
     {
+        audio.Play();
         vidaJugador.RecibirDaño(daño);
         estaAtacando = true;
         animator.SetTrigger("DebeAtacar");

@@ -6,6 +6,8 @@ using UnityEngine.AI;
 public class LogicaZombie : MonoBehaviour
 {
     private GameObject tarjet;
+
+    private AudioSource audio;
     private NavMeshAgent Agente;
 
     private Vida vida;
@@ -26,6 +28,8 @@ public class LogicaZombie : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        audio = gameObject.GetComponent<AudioSource>();
         tarjet = GameObject.Find("Player");
         vidaJugador = tarjet.GetComponent<Vida>();
 
@@ -112,6 +116,7 @@ public class LogicaZombie : MonoBehaviour
 
     void atacar()
     {
+        audio.Play();
         vidaJugador.RecibirDaño(daño);
         Agente.speed = 0;
         Agente.angularSpeed = 0;
