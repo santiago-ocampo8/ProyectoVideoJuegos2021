@@ -12,9 +12,14 @@ public class GeneradorEnemigos : MonoBehaviour
 
     GameObject zombie;
 
+    bool bandera;
+    int cantidad;
+
     // Start is called before the first frame update
     void Start()
     {
+        bandera = true;
+        cantidad = 0;
         puntosGeneracion = new Transform[transform.childCount];
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -26,14 +31,21 @@ public class GeneradorEnemigos : MonoBehaviour
 
     IEnumerator AparecerEnemigo()
     {
-        while(true)
+        while(bandera)
         {
             for (int i = 0; i < puntosGeneracion.Length; i++)
             {
                 Transform pGenereacion = puntosGeneracion[i];
                 zombie = Instantiate(zombiePrefab, pGenereacion.position, pGenereacion.rotation);
                 zombie.transform.SetParent(Coordenadas.transform);
+                cantidad ++;
             }
+
+            if(cantidad == 10)
+            {
+                bandera = false;
+            }
+            
             yield return new WaitForSeconds(tiempoGeneracion);
         }
     }

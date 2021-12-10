@@ -43,7 +43,7 @@ public class SeguimientoMutant : MonoBehaviour
         NavMeshHit hit;
         vision = NavMesh.Raycast(this.transform.position, this.Enemigo.transform.position, out hit, NavMesh.AllAreas);
 
-        if (hit.distance < 30f && (!vision))
+        if (hit.distance < 20f && (!vision))
         {
             //me deberia seguir
             this.gameObject.GetComponent<LogicaMutant>().setBandera(false);

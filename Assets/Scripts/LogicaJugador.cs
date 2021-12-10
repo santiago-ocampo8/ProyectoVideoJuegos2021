@@ -36,7 +36,25 @@ public class LogicaJugador : MonoBehaviour
 
     void reiniciarJuego()
     {
+        //SceneManager.LoadSceneAsync(0);
+        //SceneManager.UnloadScene(SceneManager.GetActiveScene().name);
+        //SceneManager.LoadScene(0,LoadSceneMode.Single);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible=true;
+        // foreach(GameObject g in SceneManager.GetActiveScene().GetRootGameObjects())
+        // {
+        //     g.SetActive (false);
+                                 
+        // }
+        //Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene(0);
+        // foreach(GameObject g in SceneManager.GetSceneByName("Menu").GetRootGameObjects())
+        // {
+        //     g.SetActive (true);
+                                     
+        // }
+        
+        
         puntaje.valor = 0;
         AudioListener.volume = 1f;
     }
