@@ -5,23 +5,29 @@ using UnityEngine.SceneManagement;
 
 public class LogicaHelicoptero : MonoBehaviour
 {
+    GameObject jugador;
     // Start is called before the first frame update
     void Start()
     {
-        
+        jugador = GameObject.Find("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
+        double distancia =Vector3.Distance(this.transform.position,this.jugador.transform.position);
 
-    private void OnTriggerEnter(Collider other) {
-        if (other.CompareTag("Player"))
-        {   
-
-            SceneManager.LoadScene(2);
+        if(distancia <= 10)
+        {
+            Invoke("reiniciar", 1.5f);
         }
     }
+
+     void reiniciar()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible=true;
+        SceneManager.LoadScene(2);
+    }
+
 }

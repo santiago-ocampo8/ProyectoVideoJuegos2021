@@ -38,8 +38,9 @@ public class GeneradorEnemigos : MonoBehaviour
                 Transform pGenereacion = puntosGeneracion[i];
                 zombie = Instantiate(zombiePrefab, pGenereacion.position, pGenereacion.rotation);
                 zombie.transform.SetParent(Coordenadas.transform);
-                cantidad ++;
+                
             }
+            cantidad ++;
 
             if(cantidad == 10)
             {
