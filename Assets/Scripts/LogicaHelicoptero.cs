@@ -20,8 +20,8 @@ public class LogicaHelicoptero : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player"))
         {   
-            enabled=false;
-            other.GetComponent<LogicaJugador>().reiniciarJuego();
+
+            SceneManager.LoadScene(2);
         }
     }
 }

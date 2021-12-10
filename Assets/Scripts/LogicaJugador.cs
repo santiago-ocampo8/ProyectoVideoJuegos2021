@@ -34,9 +34,8 @@ public class LogicaJugador : MonoBehaviour
         }
     }
 
-    public void reiniciarJuego()
+    void reiniciarJuego()
     {
-        Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene(0);
         puntaje.valor = 0;
         AudioListener.volume = 1f;
