@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CanvasStart : MonoBehaviour
+public class Canvasend : MonoBehaviour
 {
-    public void Jugar(){
-        
-        SceneManager.LoadScene(1);
+    public void reiniciar   (){
+
+        SceneManager.LoadScene(0);
     }
-    
 }
